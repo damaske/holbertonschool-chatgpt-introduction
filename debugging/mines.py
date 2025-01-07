@@ -13,6 +13,7 @@ class Minesweeper:
         self.mines = set(random.sample(range(self.total_cells), mines))
         self.field = [[' ' for _ in range(width)] for _ in range(height)]
         self.revealed = [[False for _ in range(width)] for _ in range(height)]
+        #adding the start of coubt opened cells
         self.revealed_count = 0
 
     def print_board(self, reveal=False):
@@ -64,6 +65,7 @@ class Minesweeper:
     def play(self):
         while True:
             self.print_board()
+            # check win the user or not
             if self.check_win():
                 print("Congratulations! You've revealed all non-mine cells. You win!")
                 break
